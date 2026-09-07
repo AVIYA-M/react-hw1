@@ -15,7 +15,17 @@ function Header() {
     </header>
   )
 }
-function Flower({ flowerName, petalColor, meinPetalColor }) {
+const colorMap = {
+  צהוב: 'yellow',
+  כתום: 'orange',
+  ורוד: 'pink',
+  סגול: 'purple',
+  ירוק: 'green',
+  אדום: 'red',
+  לבן: 'white',
+  שחור: 'black',
+}
+function Flower({ flowerName, petalColor="ורוד", meinPetalColor="סגול" }) {
   const Click = () => {
     alert("אני פרח מסוג " + flowerName);
   };
@@ -30,8 +40,8 @@ function Flower({ flowerName, petalColor, meinPetalColor }) {
         alignItems: 'center',
         justifyContent: 'center',  
         textAlign: 'center',
-        color: 'orange',
-        backgroundColor: 'yellow'
+        color: colorMap[meinPetalColor],
+        backgroundColor: colorMap[petalColor]
       }}
     >
       <h2>{flowerName}</h2>
@@ -44,6 +54,11 @@ function App() {
       <>
       <Header />
       <Flower flowerName="חמניה" petalColor="צהוב" meinPetalColor="כתום" />
+      <Flower flowerName="ורד" petalColor="אדום" />
+      <Flower flowerName="נרקיס" meinPetalColor="לבן" />
+      <Flower flowerName="רקפת" />
+
+
     </>
   )
 }
