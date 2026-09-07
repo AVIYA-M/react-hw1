@@ -15,40 +15,35 @@ function Header() {
     </header>
   )
 }
-function Flower() {
-
-  const flowerName="חמניה";
-  const petalColor="צהוב";
-  const meinPetalColor="כתום";
+function Flower({ flowerName, petalColor, meinPetalColor }) {
   const Click = () => {
-    alert("אני פרח מסוג " + flowerName)
-  }
+    alert("אני פרח מסוג " + flowerName);
+  };
 
   return (
     <div 
-    onClick={Click}
-    style={{
-      display: 'flex',
-      flexDirection: 'column',  
-      fontFamily: 'Arial, sans-serif',
-      alignItems: 'center',
-      justifyContent: 'center',  
-      textAlign: 'center',
-      color: 'orange',
-      backgroundColor: 'yellow'
-    }} >
+      onClick={Click}
+      style={{
+        display: 'flex',
+        flexDirection: 'column',  
+        fontFamily: 'Arial, sans-serif',
+        alignItems: 'center',
+        justifyContent: 'center',  
+        textAlign: 'center',
+        color: 'orange',
+        backgroundColor: 'yellow'
+      }}
+    >
       <h2>{flowerName}</h2>
-      <p >{petalColor}  {"ו" +meinPetalColor}</p>
-    
+      <p>{petalColor} {"ו" + meinPetalColor}</p>
     </div>
-
-  )
+  );
 }
 function App() {
   return (
       <>
       <Header />
-      <Flower />
+      <Flower flowerName="חמניה" petalColor="צהוב" meinPetalColor="כתום" />
     </>
   )
 }
